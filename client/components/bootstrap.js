@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
+const Bootstrap = ({handleClick, isLoggedIn}) => (
   <div>
   {/* <!-- Navigation --> */}
     <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -121,7 +121,8 @@ const Navbar = ({handleClick, isLoggedIn}) => (
             <h2 className="text-white mb-5">Subscribe to receive updates!</h2>
 
             <form className="form-inline d-flex">
-              <input type="email" className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address..."> </input>
+              {/* <input type="email" className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address..." /> */}
+              <p>EMAIL INPUT HERE</p>
               <button type="submit" className="btn btn-primary mx-auto">Subscribe</button>
             </form>
 
@@ -223,12 +224,12 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch)(Bootstrap)
 
 /**
  * PROP TYPES
  */
-Navbar.propTypes = {
+Bootstrap.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
