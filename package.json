@@ -1,0 +1,47 @@
+{
+  "name": "skidelivery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server",
+    "build-client-watch": "webpack -w",
+    "build-client": "webpack",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshr4/skiSite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshr4/skiSite/issues"
+  },
+  "homepage": "https://github.com/joshr4/skiSite#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect-session-sequelize": "^5.2.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.4.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "webpack": "^4.17.1",
+    "webpack-atoms": "^7.0.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
