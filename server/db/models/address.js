@@ -19,7 +19,7 @@ const Address = db.define('address', {
     allowNull: false
   },
   zipcode: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: {
@@ -27,8 +27,8 @@ const Address = db.define('address', {
         msg: "Zipcode required"
       },
       len: {
-        args: [5, 10],
-        msg: "Zipcode must be at least 5 digits"
+        args: [5],
+        msg: "Zipcode must be 5 digits"
       }
     }
   },
