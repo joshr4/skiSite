@@ -10,7 +10,8 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
+    <header className="masthead">
+    <div className="container d-flex h-100 align-items-center">
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="email">
@@ -31,6 +32,7 @@ const AuthForm = props => {
       </form>
       <a href="/auth/google">{displayName} with Google</a>
     </div>
+    </header>
   )
 }
 
