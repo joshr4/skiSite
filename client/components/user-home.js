@@ -14,7 +14,6 @@ export const UserHome = props => {
         <div className="mx-auto text-center">
           <h1 className="mx-auto my-0 text-uppercase">Welcome to Ski Delivery</h1>
           <h2 className="text-white-50 mx-auto mt-2 mb-5">Home page dashboard</h2>
-          <a href="#about" className="btn btn-primary js-scroll-trigger">Get Started</a>
         </div>
       </div>
     </header>
