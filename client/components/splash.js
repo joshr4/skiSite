@@ -8,10 +8,26 @@ const Splash = ({handleClick, isLoggedIn}) => (
   <div>
     <header>
       <div>
-        <div>
-          <h1 className="mx-auto my-0 text-uppercase">Grayscale</h1>
-          <h2 className="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
-          <a href="#about" className="btn btn-primary js-scroll-trigger">Get Started</a>
+        <div style={{'padding':'3em'}}>
+          <h1 className="mx-auto my-0">
+            Ski delivery service made easy!
+          </h1>
+          <h2 className="text-white-50 mx-auto mt-2 mb-5">
+            Sign up today and deliver your skis tomorrow
+          </h2>
+          <p>
+            Spicy jalapeno bacon ipsum dolor amet sirloin doner spare ribs
+            sausage, pig short loin capicola pastrami cupim short ribs chuck
+            tongue. Sausage hamburger short ribs, sirloin biltong tail short
+            loin turkey kielbasa ribeye. Ham pastrami picanha, swine pork
+            porchetta fatback flank meatball drumstick kevin beef bacon filet
+            mignon andouille. <br/><br/>Sirloin turducken flank chicken tri-tip pork loin
+            capicola kielbasa. Doner picanha pork sirloin ham, ham hock brisket
+            pork chop pastrami. Shankle meatloaf venison prosciutto short loin,
+            shoulder turducken cow porchetta landjaeger corned beef leberkas
+            tail brisket. Turkey chicken burgdoggen leberkas pork chop tri-tip
+            pancetta tenderloin. Landjaeger chuck prosciutto beef.
+          </p>
         </div>
       </div>
     </header>

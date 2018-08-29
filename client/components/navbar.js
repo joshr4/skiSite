@@ -5,44 +5,38 @@ import { Link } from 'react-router-dom'
 import { logout } from '../store'
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <nav>
-    <div>
-      <a href="#page-top">Start Bootstrap</a>
-      <button type="button">
-        Menu
-      </button>
-      <div>
-        {isLoggedIn ? (
-          <ul>
-            <li>
-              <a href="#about">About</a>
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <Link className="navbar-brand" to="/splash">SkiDelivery</Link>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    {isLoggedIn ? (
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/home">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/account">My Account</Link>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#" onClick={handleClick}>Logout</a>
+          </li>
+        </ul>
+      </div>
+    ) : (
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">Login</Link>
             </li>
-            <li>
-              {/* The navbar will show these links after you log in */}
-              <Link to="/home">Home</Link>
-            </li>
-            <li>
-              <a href="#" onClick={handleClick}>
-                Logout
-              </a>
+            <li className="nav-item">
+              <Link className="nav-link" to="/signup">Sign Up</Link>
             </li>
           </ul>
-        ) : (
-            <ul>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                {/* The navbar will show these links before you log in */}
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/signup">Sign Up</Link>
-              </li>
-            </ul>
-          )}
-      </div>
-    </div>
+        </div>
+
+      )}
   </nav>
 )
 
@@ -66,9 +60,52 @@ const mapDispatch = dispatch => {
 export default connect(mapState, mapDispatch)(Navbar)
 
 /**
- * PROP TYPES
- */
+* PROP TYPES
+*/
 Navbar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
+
+
+  // <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  //   <a className="navbar-brand" href="#">Ski Delivery</a>
+  //   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  //     <span class="navbar-toggler-icon"></span>
+  //   </button>
+  //   {isLoggedIn ? (
+  //     <div className="collapse navbar-collapse" id="navbarSupportedContent">
+  //       <ul class="navbar-nav mr-auto">
+  //         <li class="nav-item active">
+  //           <a className="nav-link" href="#page-top">Start Bootstrap</a>
+  //         </li>
+  //         <li class="nav-item active">
+  //           <Link className="nav-link" to="/about">About</Link>
+  //         </li>
+  //         <li class="nav-item active">
+  //           <Link className="nav-link" to="/home">Home</Link>
+  //         </li>
+  //         <a className="nav-link" href="#" onClick={handleClick}>
+  //           Logout
+  //             </a>
+  //       </ul>
+  //     </div>
+  //   ) : (
+  //       <div className="collapse navbar-collapse" id="navbarSupportedContent">
+  //         <ul class="navbar-nav mr-auto">
+  //           <li class="nav-item active">
+  //             <a className="nav-link" href="#page-top">Start Bootstrap</a>
+  //           </li>
+  //           <li class="nav-item active">
+  //             <Link className="nav-link" to="/about">About</Link>
+  //           </li>
+  //           <li class="nav-item active">
+  //             <Link className="nav-link" to="/login">Login</Link>
+  //           </li>
+  //           <li class="nav-item active">
+  //             <Link className="nav-link" to="/signup">Sign Up</Link>
+  //           </li>
+  //         </ul>
+  //       </div>
+  //     )}
+  // </nav>

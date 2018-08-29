@@ -10,7 +10,7 @@ export const UserHome = props => {
 
   return (
     <header className="masthead">
-      <div className="container d-flex h-100 align-items-center">
+      <div className="container d-flex h-100 align-items-center" style={{'paddingTop':'4em'}}>
         <div className="mx-auto text-center">
           <h1 className="mx-auto my-0 text-uppercase">Welcome to Ski Delivery</h1>
           <h2 className="text-white-50 mx-auto mt-2 mb-5">Home page dashboard</h2>
