@@ -1,24 +1,59 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Splash} from './index'
-import {me} from '../../store'
+import GearItem from './gear-item'
+import { me } from '../../store'
 
 /**
  * COMPONENT
  */
 class Gear extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      userGear: [
+        {
+          id: 1,
+          name: 'Powder',
+          description: 'grandpas ski, they are banged up',
+          type: 'ski',
+          userId: 1,
+          warehouseId: 1
+        },
+        {
+          id: 2,
+          name: 'Johnnys board',
+          description: 'bday gift 2015, last waxes 2017',
+          type: 'snowboard',
+          userId: 1,
+          warehouseId: 3
+        },
+        {
+          id: 3,
+          name: 'best skis ever',
+          description: 'fast skis',
+          type: 'ski',
+          userId: 1,
+          warehouseId: 2
+        }
+      ]
+    }
+  }
+
+
   componentDidMount() {
     this.props.loadInitialData()
   }
 
   render() {
-    const {isLoggedIn} = this.props
+
+    const { isLoggedIn } = this.props
     return (
       <div>
         <h3>Gear Page</h3>
-
+        {this.state.userGear.map(gear => <GearItem gear={gear} key={gear.id} />)}
       </div>
     )
   }
@@ -38,7 +73,7 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     loadInitialData() {
-      dispatch(me())
+      //dispatch(me())
     }
   }
 }
