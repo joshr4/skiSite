@@ -14,7 +14,7 @@ const Trip = require('./trip')
 
  Mountain.belongsTo(Address)
  Warehouse.belongsTo(Address)
- Gear.belongsTo(Warehouse, {as: 'homeWarehouse'})
+ Warehouse.hasMany(Gear)
 
  User.hasMany(Gear)
  User.hasMany(Address, {as: 'shippingAddress'})

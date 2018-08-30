@@ -9,4 +9,5 @@ export {Login, Signup} from './auth-form'
 export {default as Splash} from './splash'
 export {default as Account} from './account'
 export {default as Trips} from './trips'
-export {default as Gear} from './gear'
+
+export {default as Gear} from './gear/'

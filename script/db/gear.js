@@ -1,60 +1,27 @@
-const {Address} = require('../../server/db/models')
+const {Gear} = require('../../server/db/models')
 
-const seedAddress = Promise.all([
-  Address.create({
-    fullName: 'Josh Remaley',
-    streetline1: '3029 N Kenmore Ave',
-    streetline2: 'Apt 1',
-    city: 'Chicago',
-    zipcode: '60657',
-    state: 'IL',
-    country: 'USA',
+const seedGear = Promise.all([
+  Gear.create({
+    name: 'Powder',
+    description: 'grandpas ski, they are banged up',
+    type: 'ski',
+    userId: 1,
+    warehouseId: 1
   }),
-  Address.create({
-    fullName: 'Maggie S',
-    streetline1: '5416 W Pensacola Ave',
-    streetline2: null,
-    city: 'Chicago',
-    zipcode: '60641',
-    state: 'IL',
-    country: 'USA',
+  Gear.create({
+    name: 'Johnnys board',
+    description: 'bday gift 2015, last waxes 2017',
+    type: 'snowboard',
+    userId: 1,
+    warehouseId: 1
   }),
-  Address.create({
-    fullName: 'Warehouse Bob',
-    streetline1: '123 Main Street',
-    streetline2: null,
-    city: 'Denver',
-    zipcode: '00001',
-    state: 'CO',
-    country: 'USA',
-  }),
-  Address.create({
-    fullName: 'Snowboard Sam',
-    streetline1: '123 Breck Street',
-    streetline2: null,
-    city: 'Breckenridge',
-    zipcode: '00002',
-    state: 'CO',
-    country: 'USA',
-  }),
-  Address.create({
-    fullName: 'Dave',
-    streetline1: '789 Downtown Street',
-    streetline2: null,
-    city: 'Denver',
-    zipcode: '00003',
-    state: 'CO',
-    country: 'USA',
-  }),
-  Address.create({
-    fullName: 'Bryan',
-    streetline1: '456 Iowa Street',
-    streetline2: null,
-    city: 'Iowa City',
-    zipcode: '00004',
-    state: 'IA',
-    country: 'USA',
+  Gear.create({
+    name: 'best skis ever',
+    description: 'fast skis',
+    type: 'ski',
+    userId: 1,
+    warehouseId: 1
   }),
 ])
 
-module.exports = seedAddress
+module.exports = seedGear

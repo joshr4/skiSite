@@ -3,12 +3,12 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Splash} from './index'
-import {me} from '../store'
+import {me} from '../../store'
 
 /**
  * COMPONENT
  */
-class Trips extends Component {
+class Gear extends Component {
   componentDidMount() {
     this.props.loadInitialData()
   }
@@ -18,6 +18,7 @@ class Trips extends Component {
     return (
       <div>
         <h3>Gear Page</h3>
+
       </div>
     )
   }
@@ -44,12 +45,12 @@ const mapDispatch = dispatch => {
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Trips))
+export default withRouter(connect(mapState, mapDispatch)(Gear))
 
 /**
  * PROP TYPES
  */
-Trips.propTypes = {
+Gear.propTypes = {
   loadInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }

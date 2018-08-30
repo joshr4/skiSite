@@ -8,6 +8,8 @@ async function seed() {
 
   await require('./db/user')
   await require('./db/address')
+  await require('./db/warehouse')
+  await require('./db/gear')
 
   console.log(`seeded successfully`)
 }
