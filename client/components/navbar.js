@@ -3,45 +3,23 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout } from '../store'
+import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/splash">SkiDelivery</Link>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
+  <nav>
+    <Link to="/splash">SkiDelivery</Link>
     {isLoggedIn ? (
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/home">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/trips">Trips</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/gear">Gear</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/account">My Account</Link>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#" onClick={handleClick}>Logout</a>
-          </li>
-        </ul>
+      <div>            <Link to="/home">Home</Link>
+        <Link to="/trips">Trips</Link>
+        <Link to="/gear">Gear</Link>
+        <Link to="/account">My Account</Link>
+        <a href="#" onClick={handleClick}>Logout</a>
       </div>
     ) : (
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signup">Sign Up</Link>
-            </li>
-          </ul>
+        <div>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
-
       )}
   </nav>
 )
