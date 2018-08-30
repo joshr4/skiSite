@@ -10,8 +10,8 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <header className="masthead">
-    <div className="container d-flex h-100 align-items-center" style={{'flexDirection':'column','paddingTop':'2em'}}>
+  <header>
+    <div style={{'flexDirection':'column','paddingTop':'2em'}}>
       <form onSubmit={handleSubmit} name={name} style={{'display':'flex','flexDirection':'column','alignItems':'flex-end'}}>
         <div>
           <label htmlFor="email">

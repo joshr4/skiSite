@@ -9,7 +9,7 @@ export const UserHome = props => {
   const { email } = props
 
   return (
-    <header className="masthead">
+    <header>
       <div className="container d-flex h-100 align-items-center" style={{'paddingTop':'4em'}}>
         <div className="mx-auto text-center">
           <h1 className="mx-auto my-0 text-uppercase">Welcome to Ski Delivery</h1>

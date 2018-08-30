@@ -3,16 +3,15 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
+import {Alert} from 'react-bootstrap'
 
 const Splash = ({handleClick, isLoggedIn}) => (
   <div>
     <header>
       <div>
-        <div style={{'padding':'3em'}}>
-          <h1 className="mx-auto my-0">
-            Ski delivery service made easy!
-          </h1>
-          <h2 className="text-white-50 mx-auto mt-2 mb-5">
+        <div style={{padding: '3em'}}>
+          <h1>Ski delivery service made easy!</h1>
+          <h2>
             Sign up today and deliver your skis tomorrow
           </h2>
           <p>
@@ -21,11 +20,12 @@ const Splash = ({handleClick, isLoggedIn}) => (
             tongue. Sausage hamburger short ribs, sirloin biltong tail short
             loin turkey kielbasa ribeye. Ham pastrami picanha, swine pork
             porchetta fatback flank meatball drumstick kevin beef bacon filet
-            mignon andouille. <br/><br/>Sirloin turducken flank chicken tri-tip pork loin
-            capicola kielbasa. Doner picanha pork sirloin ham, ham hock brisket
-            pork chop pastrami. Shankle meatloaf venison prosciutto short loin,
-            shoulder turducken cow porchetta landjaeger corned beef leberkas
-            tail brisket. Turkey chicken burgdoggen leberkas pork chop tri-tip
+            mignon andouille. <br />
+            <br />Sirloin turducken flank chicken tri-tip pork loin capicola
+            kielbasa. Doner picanha pork sirloin ham, ham hock brisket pork chop
+            pastrami. Shankle meatloaf venison prosciutto short loin, shoulder
+            turducken cow porchetta landjaeger corned beef leberkas tail
+            brisket. Turkey chicken burgdoggen leberkas pork chop tri-tip
             pancetta tenderloin. Landjaeger chuck prosciutto beef.
           </p>
         </div>
