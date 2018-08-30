@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome, Splash, Account, Trips, Gear} from './components'
+import GearModal from './components/gear/gear-modal'
 import {me} from './store'
 
 /**
