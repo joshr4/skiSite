@@ -19,41 +19,6 @@ class Trips extends Component {
     return (
       <div>
         <h3>Trips Page</h3>
-        <div>
-          <Nav
-            bsStyle="tabs"
-            justified
-            activeKey={1}
-            onSelect={key => this.handleSelect(key)}
-          >
-            <NavItem eventKey={1} href="/home">
-              NavItem 1 content
-          </NavItem>
-            <NavItem eventKey={2} title="Item">
-              NavItem 2 content
-          </NavItem>
-            <NavItem eventKey={3} disabled>
-              NavItem 3 content
-          </NavItem>
-          </Nav>
-          <br />
-          <Nav
-            bsStyle="pills"
-            justified
-            activeKey={1}
-            onSelect={key => this.handleSelect(key)}
-          >
-            <NavItem eventKey={1} href="/home">
-              NavItem 1 content
-          </NavItem>
-            <NavItem eventKey={2} title="Item">
-              NavItem 2 content
-          </NavItem>
-            <NavItem eventKey={3} disabled>
-              NavItem 3 content
-          </NavItem>
-          </Nav>
-        </div>
       </div>
     )
   }

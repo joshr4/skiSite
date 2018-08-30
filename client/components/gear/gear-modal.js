@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Modal from 'react-modal'
 
 const GearModal = props => {
-  console.log('line 7', props.gear)
   // const { type, name, description, warehouseId, id } = props.gear
   return (
     <Modal
