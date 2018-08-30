@@ -1,9 +1,10 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Splash} from './index'
-import {me} from '../store'
+import { Splash } from './index'
+import { me } from '../store'
+import { Nav, NavItem } from 'react-bootstrap'
 
 /**
  * COMPONENT
@@ -14,10 +15,45 @@ class Trips extends Component {
   }
 
   render() {
-    const {isLoggedIn} = this.props
+    const { isLoggedIn } = this.props
     return (
       <div>
         <h3>Trips Page</h3>
+        <div>
+          <Nav
+            bsStyle="tabs"
+            justified
+            activeKey={1}
+            onSelect={key => this.handleSelect(key)}
+          >
+            <NavItem eventKey={1} href="/home">
+              NavItem 1 content
+          </NavItem>
+            <NavItem eventKey={2} title="Item">
+              NavItem 2 content
+          </NavItem>
+            <NavItem eventKey={3} disabled>
+              NavItem 3 content
+          </NavItem>
+          </Nav>
+          <br />
+          <Nav
+            bsStyle="pills"
+            justified
+            activeKey={1}
+            onSelect={key => this.handleSelect(key)}
+          >
+            <NavItem eventKey={1} href="/home">
+              NavItem 1 content
+          </NavItem>
+            <NavItem eventKey={2} title="Item">
+              NavItem 2 content
+          </NavItem>
+            <NavItem eventKey={3} disabled>
+              NavItem 3 content
+          </NavItem>
+          </Nav>
+        </div>
       </div>
     )
   }
