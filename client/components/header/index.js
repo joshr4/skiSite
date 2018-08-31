@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { logout } from '../store'
+import { logout } from '../../store'
 import { Nav, Navbar, NavItem, Button, NavDropdown, MenuItem } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
-import { NavLink } from './index'
+import { default as NavLink } from './NavLink'
 
 /**
  * COMPONENT
