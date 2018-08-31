@@ -11,3 +11,6 @@ export {default as Account} from './account'
 export {default as Trips} from './trips'
 
 export {default as Gear} from './gear/'
+
+export {default as NavLink} from './NavLink'
+

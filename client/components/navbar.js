@@ -3,88 +3,89 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout } from '../store'
-import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Nav, NavItem, Button, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import { NavLink } from './index'
 
 /**
  * COMPONENT
  */
 class Navbar extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      activeKey: 0,
+      activeTab: 0,
     }
     this.handleSelect = this.handleSelect.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
-  handleSelect (key) {
-    this.setState({activeKey: key})
+  handleSelect(key) {
+    this.setState({ activeTab: key })
+  }
+  handleLogout() {
+    console.log('handleLogout upp')
+    dispatch(logout())
   }
 
-    render() {
-      let { handleClick, isLoggedIn } = this.props
-      console.log('active',this.state.activeKey)
-      return isLoggedIn ?
+  render() {
+    const { handleLogout, isLoggedIn } = this.props
+    return (
+      isLoggedIn ?
         (
-          <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={key => this.handleSelect(key)}>
-            <LinkContainer to="/splash">
-              <NavItem eventKey={1}>SkiDelivery</NavItem>
+          <Nav style={{ 'padding': '0% 15%', 'display': 'flex', 'justifyContent': 'space-between' }} bsStyle="tabs" activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
+            <LinkContainer style={{ 'marginRight': 'auto', 'alignSelf': 'center' }} to="/splash">
+              <a>SkiDelivery</a>
             </LinkContainer>
-            <LinkContainer to="/home">
-              <NavItem eventKey={2}>Home</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/trips">
-              <NavItem eventKey={3}>Trips</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/gear">
-              <NavItem eventKey={4}>Gear</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/account">
-              <NavItem eventKey={5}>My Account</NavItem>
-            </LinkContainer>
-            <NavItem eventKey={6} href="#" onClick={handleClick}>Logout</NavItem>
-
+            <NavLink to='/home' text='Home' eventKey={2} />
+            <NavLink to='/trips' text='Trips' eventKey={3} />
+            <NavLink to='/gear' text='Gear' eventKey={4} />
+            <NavLink to='/account' text='My Account' eventKey={5} />
+            <Button onClick={() => handleLogout()} bsStyle="info">Logout</Button>
           </Nav>
         ) : (
-          <Nav bsStyle="tabs" activeKey="1" onSelect={key => this.handleSelect(key)}>
-            <NavItem href="/splash">SkiDelivery</NavItem>
-            <NavItem href="/login">Login</NavItem>
-            <NavItem href="/signup">Sign Up</NavItem>
+          <Nav style={{ 'padding': '0% 15%', 'display': 'flex', 'justifyContent': 'space-between' }} bsStyle="tabs" activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
+            <LinkContainer style={{ 'marginRight': 'auto', 'alignSelf': 'center' }} to="/splash">
+              <a>SkiDelivery</a>
+            </LinkContainer>
+            <NavLink to='/login' text='Login' eventKey={2} />
+            <NavLink to='/signup' text='Sign Up' eventKey={3} />
           </Nav>
         )
+    )
+  }
+}
+
+/**
+ * CONTAINER
+ */
+const mapState = state => {
+  return {
+    isLoggedIn: !!state.user.id
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    handleLogout() {
+      console.log('handleLogout')
+      dispatch(logout())
     }
   }
+}
 
-  /**
-   * CONTAINER
-   */
-  const mapState = state => {
-    return {
-      isLoggedIn: !!state.user.id
-    }
-  }
+//had to add this function and the pure: false option to the connect function below
+//solved a component rendering issue
+const mergeProps = state => {
+  return state
+}
 
-  const mapDispatch = dispatch => {
-    return {
-      handleClick() {
-        dispatch(logout())
-      }
-    }
-  }
-
-  //had to add this function and the pure: false option to the connect function below
-  //solved a component rendering issue
-  const mergeProps = state => {
-    return state
-  }
-
-  export default connect(mapState, mapDispatch, mergeProps, {pure: false})(Navbar)
+export default connect(mapState, mapDispatch, null, { pure: false })(Navbar)
 
 /**
 * PROP TYPES
 */
 Navbar.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  //handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
