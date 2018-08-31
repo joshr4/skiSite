@@ -10,28 +10,32 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-  <header>
-    <div style={{'flexDirection':'column','paddingTop':'2em'}}>
-      <form onSubmit={handleSubmit} name={name} style={{'display':'flex','flexDirection':'column','alignItems':'flex-end'}}>
-        <div>
-          <label htmlFor="email">
-            <small style={{'padding':'0.5em'}}>Email</small>
-          </label>
-          <input name="email" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <small style={{'padding':'0.5em'}}>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
-        {error && error.response && <div> {error.response.data} </div>}
-      </form>
-      <a href="/auth/google">{displayName} with Google</a>
-    </div>
+    <header>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '6em'}}>
+        <form
+          onSubmit={handleSubmit}
+          name={name}
+          style={{display: 'flex', justifyContent: 'center'}}
+        >
+          <div>
+            <label htmlFor="email">
+              <small style={{padding: '0.5em'}}>Email</small>
+            </label>
+            <input name="email" type="text" />
+          </div>
+          <div>
+            <label htmlFor="password">
+              <small style={{padding: '0.5em'}}>Password</small>
+            </label>
+            <input name="password" type="password" />
+          </div>
+          <div>
+            <button type="submit">{displayName}</button>
+          </div>
+          {error && error.response && <div> {error.response.data} </div>}
+        </form>
+        <a href="/auth/google">{displayName} with Google</a>
+      </div>
     </header>
   )
 }

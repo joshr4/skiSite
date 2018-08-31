@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { logout } from '../store'
-import { Nav, NavItem, Button, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap'
+import { Nav, Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { NavLink } from './index'
 
@@ -17,15 +16,10 @@ class Navbar extends Component {
       activeTab: 0,
     }
     this.handleSelect = this.handleSelect.bind(this)
-    this.handleLogout = this.handleLogout.bind(this)
   }
 
   handleSelect(key) {
     this.setState({ activeTab: key })
-  }
-  handleLogout() {
-    console.log('handleLogout upp')
-    dispatch(logout())
   }
 
   render() {
@@ -68,16 +62,9 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     handleLogout() {
-      console.log('handleLogout')
       dispatch(logout())
     }
   }
-}
-
-//had to add this function and the pure: false option to the connect function below
-//solved a component rendering issue
-const mergeProps = state => {
-  return state
 }
 
 export default connect(mapState, mapDispatch, null, { pure: false })(Navbar)
@@ -86,6 +73,6 @@ export default connect(mapState, mapDispatch, null, { pure: false })(Navbar)
 * PROP TYPES
 */
 Navbar.propTypes = {
-  //handleClick: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
