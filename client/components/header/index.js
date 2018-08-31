@@ -25,26 +25,8 @@ class Header extends Component {
   render() {
     const { handleLogout, isLoggedIn } = this.props
     return (
-      // isLoggedIn ?
-      //   (
-      //     <Nav style={{ 'padding': '0% 15%', 'display': 'flex', 'justifyContent': 'space-between' }} bsStyle="tabs" activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
-      //       <NavLink style={{ 'marginRight': 'auto', 'alignSelf': 'center' }} to='/splash' text='SkiDelivery' />
-      //       <NavLink to='/home' text='Home' eventKey={2} />
-      //       <NavLink to='/trips' text='Trips' eventKey={3} />
-      //       <NavLink to='/gear' text='Gear' eventKey={4} />
-      //       <NavLink to='/account' text='My Account' eventKey={5} />
-      //       <NavLink to='/login' text='Login' eventKey={2} />
-      //       <Button onClick={() => handleLogout()} bsStyle="info">Logout</Button>
-      //     </Nav>
-      //   ) : (
-      //     <Nav style={{ 'padding': '0% 15%', 'display': 'flex', 'justifyContent': 'space-between' }} bsStyle="tabs" activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
-      //       <NavLink style={{ 'marginRight': 'auto', 'alignSelf': 'center' }} to='/splash' text='SkiDelivery' />
-      //       <NavLink to='/login' text='Login' eventKey={2} />
-      //       <NavLink to='/signup' text='Sign Up' eventKey={3} />
-      //     </Nav>
-      //   )
-      <Navbar inverse collapseOnSelect style={{ borderRadius: '0px', padding: '0% 15%' }}>
-        <Navbar.Header>
+      <Navbar className='Josh1' inverse collapseOnSelect style={{ borderRadius: '0px', padding: '0% 15%' }}>
+        <Navbar.Header className='Josh2'>
           <Navbar.Brand>
             <LinkContainer to='/splash'>
               <a>SkiDelivery</a>
@@ -52,7 +34,7 @@ class Header extends Component {
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
-        <Navbar.Collapse style={{ borderRadius: '0px', padding: '0% 15%' }}>
+        <Navbar.Collapse className='Josh3' style={{ }}>
           {/* <Nav>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
@@ -63,7 +45,7 @@ class Header extends Component {
             </NavDropdown>
           </Nav> */}
           {isLoggedIn ? (
-            <Nav pullRight activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
+            <Nav className='Josh4' style={{marginRight: '12%'}} pullRight activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
               <NavLink to='/home' text='Home' eventKey={2} />
               <NavLink to='/trips' text='Trips' eventKey={3} />
               <NavLink to='/gear' text='Gear' eventKey={4} />

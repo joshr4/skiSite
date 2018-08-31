@@ -7,7 +7,7 @@ import {Alert} from 'react-bootstrap'
 
 const Splash = ({handleClick, isLoggedIn}) => (
   <div>
-    <header>
+    <header style={{padding: '0% 15%'}}>
       <div>
         <div style={{padding: '3em'}}>
           <h1>Ski delivery service made easy!</h1>
