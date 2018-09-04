@@ -1,45 +1,62 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Modal from 'react-modal'
+import { Modal, ButtonToolbar, Button } from 'react-bootstrap'
 
-const GearModal = props => {
+class GearModal extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleHide = this.handleHide.bind(this);
+
+    this.state = {
+      show: false
+    };
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
+
+  handleHide() {
+    this.setState({ show: false });
+  }
+
+  render() {
   return (
-    <div className="static-modal">
-      <Modal.Dialog>
-        <Modal.Header>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
+    <ButtonToolbar>
+        <Button bsStyle="primary" onClick={this.handleShow}>
+          Launch demo modal
+        </Button>
 
-        <Modal.Body>One fine body...</Modal.Body>
-
-        <Modal.Footer>
-          <Button>Close</Button>
-          <Button bsStyle="primary">Save changes</Button>
-        </Modal.Footer>
-      </Modal.Dialog>
-    </div>
+        <Modal
+          {...this.props}
+          show={this.state.show}
+          onHide={this.handleHide}
+          dialogClassName="custom-modal"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-lg">
+              Modal heading
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Wrapped Text</h4>
+            <p>
+              Ipsum
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleHide}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </ButtonToolbar>
   )
 }
-
-/**
- * CONTAINER
- */
-const mapState = state => {
-  return {
-    isLoggedIn: !!state.user.id
-  }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    handleClick() {
-      //dispatch(logout())
-    }
-  }
-}
-
-export default connect(mapState, mapDispatch)(GearModal)
+export default GearModal
 
 /**
  * PROP TYPES
