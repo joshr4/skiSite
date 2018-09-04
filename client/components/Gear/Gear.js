@@ -4,7 +4,7 @@ import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import GearItem from './GearItem'
 import GearModal from './GearModal'
-import { Button, ButtonToo } from 'react-bootstrap'
+import { Button, ButtonToolbar } from 'react-bootstrap'
 import { me } from '../../store'
 
 /**
@@ -16,7 +16,7 @@ class Gear extends Component {
     super()
     this.state = {
       modalGear: {},
-      modalIsOpen: false,
+      showModal: false,
       userGear: [
         {
           id: 1,
@@ -50,16 +50,15 @@ class Gear extends Component {
 
   async editGear(id) {
     await this.setState({ modalGear: this.state.userGear.filter(gear => gear.id === id)[0] });
-    console.log('line 52', this.state.modalGear)
     this.openModal()
   }
 
   openModal() {
-    this.setState({ modalIsOpen: true });
+    this.setState({ showModal: true });
   }
 
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({ showModal: false });
   }
 
   componentDidMount() {
@@ -67,14 +66,18 @@ class Gear extends Component {
   }
 
   render() {
-
     const { isLoggedIn } = this.props
+    const { showModal } = this.state
     return (
       <div>
-          <GearModal />
-          <h3>Gear Page</h3>
-          {this.state.userGear.map(gear => <GearItem gear={gear} key={gear.id} editGear={() => this.editGear(gear.id)} />)}
-
+        <ButtonToolbar>
+          <Button bsStyle="primary" onClick={this.openModal}>
+            Launch demo modal
+        </Button>
+          <GearModal show={showModal} closeModal={this.closeModal}/>
+        </ButtonToolbar>
+        <h3>Gear Page</h3>
+        {this.state.userGear.map(gear => <GearItem gear={gear} key={gear.id} editGear={() => this.editGear(gear.id)} />)}
       </div>
     )
   }
