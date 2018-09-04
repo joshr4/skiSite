@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import GearItem from './gear-item'
-import GearModal from './gear-modal'
+import GearItem from './GearItem'
+import GearModal from './GearModal'
 import { me } from '../../store'
 
 /**

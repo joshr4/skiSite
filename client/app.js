@@ -1,6 +1,7 @@
 import React from 'react'
 
-import {Header} from './components'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Routes from './routes'
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div>
       <Header />
       <Routes />
+      <Footer />
     </div>
   )
 }

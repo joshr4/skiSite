@@ -4,18 +4,21 @@ import { connect } from 'react-redux'
 import Modal from 'react-modal'
 
 const GearModal = props => {
-  // const { type, name, description, warehouseId, id } = props.gear
   return (
-    <Modal
-    isOpen={props.modalIsOpen}
-          // onAfterOpen={props.afterOpenModal}
-          onRequestClose={props.closeModal}
-          // style={{'top':'10em','left':'10em', 'right':'10em',}}
-          contentLabel="Example Modal"
-    >
-    <p>TESTTING</p>
-    <p>{props.gear.name}</p>
-    </Modal>
+    <div className="static-modal">
+      <Modal.Dialog>
+        <Modal.Header>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>One fine body...</Modal.Body>
+
+        <Modal.Footer>
+          <Button>Close</Button>
+          <Button bsStyle="primary">Save changes</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    </div>
   )
 }
 
