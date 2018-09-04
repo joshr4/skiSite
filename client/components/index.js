@@ -5,3 +5,10 @@
  */
 // export {default as Header} from './header/Header'
 export {Login, Signup} from './auth-form'
+export {default as Blog} from './Blog'
+export {default as Press} from './Press'
+export {default as Faq} from './Faq'
+export {default as Contact} from './Contact'
+export {default as Support} from './Support'
+export {default as Privacy} from './Privacy'
+export {default as Tos} from './Tos'

@@ -7,7 +7,7 @@ import Trips from './components/Trips/Trips'
 import Gear from './components/Gear/Gear'
 import Splash from './components/Splash/Splash'
 import UserHome from './components/UserHome/UserHome'
-import {Login, Signup} from './components'
+import {Login, Signup, Blog, Press, Tos, Support, Contact, Faq, Privacy} from './components'
 import {me} from './store'
 
 /**
@@ -25,7 +25,13 @@ class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/splash" component={Splash} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/press" component={Press} />
+        <Route path="/faq" component={Faq} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/support" component={Support} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/tos" component={Tos} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
@@ -33,10 +39,11 @@ class Routes extends Component {
             <Route path="/trips" component={Trips} />
             <Route path="/gear" component={Gear} />
             <Route path="/account" component={Account} />
+            <Route component={Splash} />
           </Switch>
         )}
-        {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        {/* Displays our Splash component as a fallback */}
+        <Route component={Splash} />
       </Switch>
     )
   }

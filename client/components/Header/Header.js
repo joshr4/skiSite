@@ -25,17 +25,18 @@ class Header extends Component {
   render() {
     const { handleLogout, isLoggedIn } = this.props
     return (
-      <Navbar className='Josh1' inverse collapseOnSelect style={{ borderRadius: '0px', padding: '0% 15%' }}>
-        <Navbar.Header className='Josh2'>
-          <Navbar.Brand>
-            <LinkContainer to='/splash'>
-              <a>SkiDelivery</a>
-            </LinkContainer>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse className='Josh3' style={{ }}>
-          {/* <Nav>
+      <header>
+        <Navbar className='Josh1' inverse collapseOnSelect style={{ borderRadius: '0px', padding: '0% 15%' }}>
+          <Navbar.Header className='Josh2'>
+            <Navbar.Brand>
+              <LinkContainer to='/splash'>
+                <a>SkiDelivery</a>
+              </LinkContainer>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse className='Josh3' style={{}}>
+            {/* <Nav>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
               <MenuItem eventKey={3.2}>Another action</MenuItem>
@@ -44,23 +45,24 @@ class Header extends Component {
               <MenuItem eventKey={3.3}>Separated link</MenuItem>
             </NavDropdown>
           </Nav> */}
-          {isLoggedIn ? (
-            <Nav className='Josh4' style={{marginRight: '12%'}} pullRight activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
-              <NavLink to='/home' text='Home' eventKey={2} />
-              <NavLink to='/trips' text='Trips' eventKey={3} />
-              <NavLink to='/gear' text='Gear' eventKey={4} />
-              <NavLink to='/account' text='My Account' eventKey={5} />
-              <NavItem onClick={() => handleLogout()}>Logout</NavItem>
-            </Nav>
-          ) : (<div />)}
-          {isLoggedIn ? (<div />) : (
-            <Nav pullRight activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
-              <NavLink to='/login' text='Login' eventKey={2} />
-              <NavLink to='/signup' text='Sign Up' eventKey={3} />
-            </Nav>
-          )}
-        </Navbar.Collapse>
-      </Navbar>
+            {isLoggedIn ? (
+              <Nav className='Josh4' style={{ marginRight: '12%' }} pullRight activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
+                <NavLink to='/home' text='Home' eventKey={2} />
+                <NavLink to='/trips' text='Trips' eventKey={3} />
+                <NavLink to='/gear' text='Gear' eventKey={4} />
+                <NavLink to='/account' text='My Account' eventKey={5} />
+                <NavItem onClick={() => handleLogout()}>Logout</NavItem>
+              </Nav>
+            ) : (<div />)}
+            {isLoggedIn ? (<div />) : (
+              <Nav pullRight activeKey={this.state.activeTab} onSelect={key => this.handleSelect(key)}>
+                <NavLink to='/login' text='Login' eventKey={2} />
+                <NavLink to='/signup' text='Sign Up' eventKey={3} />
+              </Nav>
+            )}
+          </Navbar.Collapse>
+        </Navbar>
+      </header>
     )
   }
 }
