@@ -10,7 +10,7 @@ const Privacy = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div style={{margin:'6% 0%', textAlign:'center'}}>
+    <div style={{padding: '0% 15%', textAlign:'center'}}>
       <h2>Privacy Policy</h2>
       <p>This privacy policy discloses the privacy practices for the website. This privacy policy applies to information collected by this website online. Your privacy is important to us, and we will never share your personal information with 3rd party partners or advertisers. Note, this privacy policy is available under a Creative Commons Sharealike license, and was originally created by Automattic.com.
 

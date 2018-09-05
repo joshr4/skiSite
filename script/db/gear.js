@@ -13,7 +13,7 @@ const seedGear = Promise.all([
     description: 'bday gift 2015, last waxes 2017',
     type: 'snowboard',
     userId: 1,
-    warehouseId: 1
+    warehouseId: 2
   }),
   Gear.create({
     name: 'best skis ever',

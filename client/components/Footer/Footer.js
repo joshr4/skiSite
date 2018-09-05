@@ -20,7 +20,7 @@ import Privacy from '../Privacy';
 class Footer extends Component {
   render() {
     return (
-      <div>
+      <div style={{padding: '5% 15%'}}>
         <Link to="/blog">Blog</Link> |
         <Link to="/press"> Press</Link> |
         <Link to="/faq"> FAQ</Link> |
