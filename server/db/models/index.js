@@ -21,7 +21,7 @@ const Trip = require('./trip')
  User.hasOne(Address, {as: 'defaultAddress'})
  User.hasMany(Trip)
 
- Trip.hasOne(Mountain)
+ Mountain.hasMany(Trip)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,

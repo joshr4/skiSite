@@ -55,6 +55,24 @@ const seedAddress = Promise.all([
     state: 'IA',
     country: 'USA',
   }),
+  Address.create({
+    fullName: 'Breck',
+    streetline1: '1 Breck Street',
+    streetline2: null,
+    city: 'Breckenridge',
+    zipcode: '00006',
+    state: 'CO',
+    country: 'USA',
+  }),
+  Address.create({
+    fullName: 'Vail',
+    streetline1: '1 Vail Street',
+    streetline2: null,
+    city: 'Vail',
+    zipcode: '00007',
+    state: 'CO',
+    country: 'USA',
+  }),
 ])
 
 module.exports = seedAddress

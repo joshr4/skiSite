@@ -7,11 +7,18 @@ async function seed() {
   console.log('db synced!')
 
   await require('./db/user')
+  console.log(`seeded users...`)
   await require('./db/address')
+  console.log(`seeded addresses...`)
   await require('./db/warehouse')
+  console.log(`seeded warehouses...`)
   await require('./db/gear')
-
-  console.log(`seeded successfully`)
+  console.log(`seeded gear...`)
+  await require('./db/mountains')
+  console.log(`seeded mountains...`)
+  await require('./db/trips')
+  console.log(`seeded trips...`)
+  console.log(`seeding completed`)
 }
 
 // We've separated the `seed` function from the `runSeed` function.

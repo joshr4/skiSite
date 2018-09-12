@@ -2,11 +2,19 @@ const {User} = require('../../server/db/models')
 
 const seedUsers = Promise.all([
   User.create({
-    email: 'codyyyyy@email.com',
+    email: 'cody@email.com',
     password: '123'
   }),
   User.create({
-    email: 'murphyyyyy@email.com',
+    email: 'murphy@email.com',
+    password: '123'
+  }),
+  User.create({
+    email: 'josh@email.com',
+    password: '123'
+  }),
+  User.create({
+    email: 'maggie@email.com',
     password: '123'
   })
 ])

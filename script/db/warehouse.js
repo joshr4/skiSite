@@ -1,6 +1,6 @@
 const {Warehouse} = require('../../server/db/models')
 
-const seedWarehouse = Promise.all([
+const seedWarehouses = Promise.all([
   Warehouse.create({
     name: 'Downtown Denver',
     addressId: 1,
@@ -18,4 +18,4 @@ const seedWarehouse = Promise.all([
   }),
 ])
 
-module.exports = seedWarehouse
+module.exports = seedWarehouses
